@@ -20,19 +20,19 @@
       <section id="monster" class="container">
         <h2>Monster Health</h2>
         <div class="healthbar">
-          <div class="healthbar__value"></div>
+          <div class="healthbar__value" :style="monsterBar "></div>
         </div>
       </section>
       <section id="player" class="container">
         <h2>Your Health</h2>
         <div class="healthbar">
-          <div class="healthbar__value"></div>
+          <div class="healthbar__value" :style="playerBar"></div>
         </div>
       </section>
       <section id="controls">
-        <button>ATTACK</button>
-        <button>SPECIAL ATTACK</button>
-        <button>HEAL</button>
+        <button @click="attackMonster">ATTACK</button>
+        <button :disabled="turningOf" @click="specialAttack">SPECIAL ATTACK</button>
+        <button @click="heal">HEAL</button>
         <button>SURRENDER</button>
       </section>
       <section id="log" class="container">
